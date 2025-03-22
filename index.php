@@ -170,7 +170,7 @@ include('./includes/connect.php');
               <?php
               $select_brands = "Select * from `brands`";
               $result_brands = mysqli_query($conn,$select_brands);
-              $row_data = mysqli_fetch_assoc($result_brand);
+              // $row_data = mysqli_fetch_assoc($result_brand);
               // echo $row_data['brand_title'];
 
               while($row_data = mysqli_fetch_assoc($result_brands)){

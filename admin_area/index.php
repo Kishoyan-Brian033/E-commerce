@@ -63,11 +63,11 @@
           <button type="button" class="btn btn-info btn-lg"><a href="index.php?insert_category"  class="nav-link text-light">Insert Categories</a></button>
           <button type="button" class="btn btn-info btn-lg"><a href="#"  class="nav-link text-light">View Categories</a></button>
           <button type="button" class="btn btn-info btn-lg"><a href="index.php?insert_brand"  class="nav-link text-light">Insert Brands</a></button>
-          <button type="button" class="btn btn-info btn-lg"><a href="#"  class="nav-link text-light">View Product</a></button>
-          <button type="button" class="btn btn-info btn-lg"><a href="#"  class="nav-link text-light">View Product</a></button>
-          <button type="button" class="btn btn-info btn-lg"><a href="#"  class="nav-link text-light">View Product</a></button>
-          <button type="button" class="btn btn-info btn-lg"><a href="#"  class="nav-link text-light">View Product</a></button>
-          <button type="button" class="btn btn-info btn-lg"><a href="#"  class="nav-link text-light">View Product</a></button>
+          <button type="button" class="btn btn-info btn-lg"><a href="#"  class="nav-link text-light">View Brands</a></button>
+          <button type="button" class="btn btn-info btn-lg"><a href="#"  class="nav-link text-light">All Orders</a></button>
+          <button type="button" class="btn btn-info btn-lg"><a href="#"  class="nav-link text-light">All Payement</a></button>
+          <button type="button" class="btn btn-info btn-lg"><a href="#"  class="nav-link text-light">All Employees</a></button>
+          <button type="button" class="btn btn-info btn-lg"><a href="#"  class="nav-link text-light">Logout</a></button>
           </div>
         </div>
       </div>

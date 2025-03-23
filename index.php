@@ -191,27 +191,25 @@ include('./includes/connect.php');
             <a href="#" class="nav-link text-light"><h4><Cap></Cap>Categories</h4></a>
            </li>
      
-           
+           <?php
+              $select_categories = "Select * from `categories`";
+              $result_categories = mysqli_query($conn,$select_categories);
+              // $row_data = mysqli_fetch_assoc($result_brand);
+              // echo $row_data['brand_title'];
+
+              while($row_data = mysqli_fetch_assoc($result_categories)){
+                $category_title = $row_data['category_title'];
+                $category_id = $row_data['category_id'];
+             echo "<li class='nav-item'>
+            <a href='index.php?category=$category_id ' class='nav-link text-light'>$category_title</a>
+           </li>";
+              }
+
+
+              ?>
 
            
-           <li class="nav-item">
-            <a href="#" class="nav-link text-light">Categories 1</a>
-           </li>
-           <li class="nav-item">
-            <a href="#" class="nav-link text-light">Categories 2</a>
-           </li>
-           <li class="nav-item">
-            <a href="#" class="nav-link text-light">Categories 3</a>
-           </li>
-           <li class="nav-item">
-            <a href="#" class="nav-link text-light">Categories 4</a>
-           </li>
-           <li class="nav-item">
-            <a href="#" class="nav-link text-light">Categories 5</a>
-           </li>
-           <li class="nav-item">
-            <a href="#" class="nav-link text-light">Categories 6</a>
-           </li>
+           
         </ul>
 
     </div>

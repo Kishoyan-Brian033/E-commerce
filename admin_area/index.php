@@ -58,7 +58,7 @@
             <p class="text-light text-center">Admin Name</p>
           </div>
           <div class="button text-center">
-          <button type="button" class="btn btn-info btn-lg my-3"><a href="#"  class="nav-link text-light">View Product</a></button>
+          <button type="button" class="btn btn-info btn-lg my-3"><a href="#"  class="nav-link text-light">Insert Product</a></button>
           <button type="button" class="btn btn-info btn-lg"><a href="#"  class="nav-link text-light">View Product</a></button>
           <button type="button" class="btn btn-info btn-lg"><a href="index.php?insert_category"  class="nav-link text-light">Insert Categories</a></button>
           <button type="button" class="btn btn-info btn-lg"><a href="#"  class="nav-link text-light">View Categories</a></button>

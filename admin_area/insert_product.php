@@ -1,3 +1,7 @@
+<?php
+include('../includes/connect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,11 +48,19 @@
              <div class="form-control mb-4 w-50 m-auto">
                 <select name="product_category" class="form-select">
                     <option value="">select a category</option>
-                    <option value="">category 1</option>
-                    <option value="">category 2</option>
-                    <option value="">category 3</option>
-                    <option value="">category 4</option>
-                    <option value="">category 5</option>
+
+                    <?php
+                       $select_query = "select * from `categories`";
+                       $result_query = mysqli_query($conn,$select_query);
+                       while($row=mysqli_fetch_assoc($result_query)){
+                        $category_title=$row['category_title'];
+                        $category_id =$row['category_id'];
+                        echo "<option value='$category_id'>$category_title</option>";
+                       }
+                    
+                    
+                    
+                    ?>
                 </select>
              </div>
               
@@ -56,11 +68,19 @@
               <div class="form-control mb-4 w-50 m-auto">
                 <select name="product_brand" class="form-select">
                     <option value="">select a brand</option>
-                    <option value="">brand 1</option>
-                    <option value="">brand 2</option>
-                    <option value="">brand 3</option>
-                    <option value="">brand 4</option>
-                    <option value="">brand 5</option>
+                    <?php
+                       $select_query = "select * from `brands`";
+                       $result_query = mysqli_query($conn,$select_query);
+                       while($row=mysqli_fetch_assoc($result_query)){
+                        $brand_title=$row['brand_title'];
+                        $brand_id =$row['id'];
+                        echo "<option value='$brand_id'>$brand_title</option>";
+                       }
+                    
+                    
+                    
+                    ?>
+                    
                 </select>
              </div>
              <!-- image 1 -->

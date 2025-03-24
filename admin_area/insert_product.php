@@ -1,5 +1,40 @@
 <?php
 include('../includes/connect.php');
+if(isset($_POST['insert_product'])){
+    $poroduct_title = $_POST['product_title'];
+    $poroduct_description = $_POST['description'];
+    $product_keyword = $_POST['product_keyword'];
+    $product_category = $_POST['product_category'];
+    $product_brand = $_POST['product_brand'];
+    $product_price = $_POST['product_price'];
+
+    //accessing images
+    $product_image1 = $_POST['product_image1']['name'];
+    $product_image2 = $_POST['product_image2']['name'];
+    $product_image3 = $_POST['product_image3']['name'];
+
+    //acessing image tmp name
+    $temp_image1 = $_POST['product_image1']['tmp_name'];
+    $temp_image2 = $_POST['product_image2']['tmp_name'];
+    $temp_image3 = $_POST['product_image3']['tmp_name'];
+
+   //  checking empty conditions
+
+   if($poroduct_title == '' or $poroduct_description =='' or  $product_keyword=='' or $product_category ==''
+   or $product_brand =='' or $product_price =='' or $temp_image3 == '' or $temp_image2 == '' or $temp_image3 =='' ){
+      echo "<srcipt>alert('fill the empty field')</script>";
+      exit(); 
+   }else{
+      move_uploaded_file($temp_image1 ,"./product_images/$product_image1");
+      move_uploaded_file($temp_image2 ,"./product_images/$product_image2");
+      move_uploaded_file($temp_image3 ,"./product_images/$product_image3");
+
+      //insert query
+      
+   }
+
+    
+}
 ?>
 
 <!DOCTYPE html>

@@ -7,30 +7,38 @@ if(isset($_POST['insert_product'])){
     $product_category = $_POST['product_category'];
     $product_brand = $_POST['product_brand'];
     $product_price = $_POST['product_price'];
+    $product_status = 'true';
 
     //accessing images
-    $product_image1 = $_POST['product_image1']['name'];
-    $product_image2 = $_POST['product_image2']['name'];
-    $product_image3 = $_POST['product_image3']['name'];
+    $product_image1 = $_FILES['product_image1']['name'];
+    $product_image2 = $_FILES['product_image2']['name'];
+    $product_image3 = $_FILES['product_image3']['name'];
 
     //acessing image tmp name
-    $temp_image1 = $_POST['product_image1']['tmp_name'];
-    $temp_image2 = $_POST['product_image2']['tmp_name'];
-    $temp_image3 = $_POST['product_image3']['tmp_name'];
+    $temp_image1 = $_FILES['product_image1']['tmp_name'];
+    $temp_image2 = $_FILES['product_image2']['tmp_name'];
+    $temp_image3 = $_FILES['product_image3']['tmp_name'];
 
    //  checking empty conditions
 
    if($poroduct_title == '' or $poroduct_description =='' or  $product_keyword=='' or $product_category ==''
    or $product_brand =='' or $product_price =='' or $temp_image3 == '' or $temp_image2 == '' or $temp_image3 =='' ){
-      echo "<srcipt>alert('fill the empty field')</script>";
+      echo "<srcipt>alert('fill the empty fields')</script>";
       exit(); 
    }else{
-      move_uploaded_file($temp_image1 ,"./product_images/$product_image1");
-      move_uploaded_file($temp_image2 ,"./product_images/$product_image2");
-      move_uploaded_file($temp_image3 ,"./product_images/$product_image3");
+      move_uploaded_file($temp_image1, "./product_images/$product_image1");
+      move_uploaded_file($temp_image2, "./product_images/$product_image2");
+      move_uploaded_file($temp_image3, "./product_images/$product_image3");
 
       //insert query
-      
+      $insert_products = "insert into `products` (product_title,product_description,product_keywod,
+      category_id,brand_id,product_image1,product_image2,product_image3,product_price,	date,	status) values
+      ('$poroduct_title','$poroduct_description','$product_keyword','$product_category','$product_brand',
+      '$product_image1','$product_image2','$product_image3','$product_price',Now(),'$product_status')";
+      $result_query = mysqli_query($conn,$insert_products);
+      if($result_query){
+         echo "<script>alert('Successfuly Inserted the products')</script>";
+      }
    }
 
     

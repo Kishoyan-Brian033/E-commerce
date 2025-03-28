@@ -53,6 +53,10 @@ function getBrands(){
   }
 }
 // dispalying categories
+if(isset($_GET['categories'])){
+  if(!isset($_GET['brand'])){
+
+ 
 function getCategories(){
   global $conn;
   $select_categories = "Select * from `categories`";
@@ -64,5 +68,6 @@ function getCategories(){
 <a href='index.php?category=$category_id ' class='nav-link text-light'>$category_title</a>
 </li>";
   }
-
+}
+}
 }
